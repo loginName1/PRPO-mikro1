@@ -48,9 +48,5 @@ public class PostajeVir {
                 .build();
     }
 
-    @POST
-    public Response posodobiPostaje(Postaja postaja) {
-        postaje.add(postaja);
-        return Response.ok().build();
-    }
+
 }
