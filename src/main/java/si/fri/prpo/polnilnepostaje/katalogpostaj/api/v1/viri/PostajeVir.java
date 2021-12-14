@@ -11,10 +11,8 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
+import java.util.logging.Logger;
 
 @ApplicationScoped
 @Path("katalog")
@@ -25,6 +23,7 @@ public class PostajeVir {
     private List<Postaja> postaje = null;
     private Client httpCLient;
     private String baseUrl;
+    private Logger log = Logger.getLogger(this.getClass().getName());
     @PostConstruct
     private void init() {
         httpCLient = ClientBuilder.newClient();
@@ -37,11 +36,11 @@ public class PostajeVir {
     public Response pridobiPostaje() {
         try {
             httpCLient
-                    .target(baseUrl + "postaje")
+                    .target(baseUrl + "/postaje/")
                     .request(MediaType.APPLICATION_JSON)
                     .get(new GenericType<List<Postaja>>(){});
         } catch (Exception e) {
-
+            log.severe(e.getMessage());
         }
         return Response
                 .status(Response.Status.OK).entity(postaje)
