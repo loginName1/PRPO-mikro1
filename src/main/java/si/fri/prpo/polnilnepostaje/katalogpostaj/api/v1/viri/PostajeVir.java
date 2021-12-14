@@ -8,10 +8,14 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.ws.rs.*;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.logging.Logger;
 
 @ApplicationScoped
@@ -35,10 +39,11 @@ public class PostajeVir {
     @GET
     public Response pridobiPostaje() {
         try {
-            httpCLient
+            postaje = httpCLient
                     .target(baseUrl + "/postaje/")
                     .request(MediaType.APPLICATION_JSON)
-                    .get(new GenericType<List<Postaja>>(){});
+                    .get(new GenericType<List<Postaja>>(){
+                    });
         } catch (Exception e) {
             log.severe(e.getMessage());
         }
