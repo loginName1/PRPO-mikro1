@@ -29,7 +29,7 @@ public class PostajeVir {
         httpCLient = ClientBuilder.newClient();
         baseUrl = ConfigurationUtil.getInstance()
                 .get("integrations.polnilnepostaje.base-url")
-                .orElse("http://localhost:8080/v1");
+                .orElse("http://host.docker.internal:8080/v1");
     }
 
     @GET

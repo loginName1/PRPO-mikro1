@@ -8,4 +8,4 @@ kumuluzee:
       port: 8081
 integrations:
   polnilnepostaje:
-    base-url: http://localhost:8080/v1
+    base-url: http://host.docker.internal:8080/v1
