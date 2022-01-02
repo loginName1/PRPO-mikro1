@@ -1,6 +1,7 @@
 package si.fri.prpo.polnilnepostaje.katalogpostaj.api.v1.viri;
 
 import com.kumuluz.ee.configuration.utils.ConfigurationUtil;
+import com.kumuluz.ee.cors.annotations.CrossOrigin;
 import si.fri.prpo.polnilnepostaje.katalogpostaj.api.v1.dtos.Postaja;
 
 import javax.annotation.PostConstruct;
@@ -18,6 +19,7 @@ import java.util.logging.Logger;
 @Path("katalog")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
+@CrossOrigin(supportedMethods = "GET,POST,HEAD,DELETE,OPTIONS")
 public class PostajeVir {
 
     private List<Postaja> postaje = null;
@@ -47,6 +49,4 @@ public class PostajeVir {
                 .status(Response.Status.OK).entity(postaje)
                 .build();
     }
-
-
 }
