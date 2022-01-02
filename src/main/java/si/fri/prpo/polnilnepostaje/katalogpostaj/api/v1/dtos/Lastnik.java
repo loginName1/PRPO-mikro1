@@ -17,8 +17,8 @@ public class Lastnik {
     public void setPriimek(String s) {this.priimek_uporabnika = s;}
     public String getUn() {return un_uporabnika;}
     public void setUn(String s) {this.un_uporabnika = s;}
-    public String getTelefon() {return telefon_uporabnika;}
-    public void setTelefon(String s) {this.telefon_uporabnika = s;}
+    public String getTel() {return telefon_uporabnika;}
+    public void setTel(String s) {this.telefon_uporabnika = s;}
     public String getMail() {return mail_uporabnika;}
     public void setMail(String s) {this.mail_uporabnika = s;}
     public String getPass() {return pass_uporabnika;}
